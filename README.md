@@ -22,6 +22,6 @@ Libraries: NLTK, Scikit-learn, Pandas, NumPy
 
 Machine Learning Algorithms: SVM, Random Forest, Naïve Bayes, K-Nearest Neighbors, Decision Tree
 
-Frameworks: Flask (backend development)
+Frameworks: Django(backend development)
 
 Tools: Jupyter Notebook, Visual Studio Code
