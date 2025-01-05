@@ -1,0 +1,74 @@
+{% load static %}
+<html>
+<head>
+<title>Detection of Child Predators Cyber Harassers on Social Media</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Username");
+	formObj.t1.focus();
+	return false;
+	}
+	
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>Detection of Child Predators Cyber Harassers on Social Media</h1>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul>
+      <li><a href="{% url 'ViewUsers' %}">View Users</a></li>
+      <li><a href="{% url 'MonitorPost' %}">Monitor Post</a></li>
+	  <li><a href="{% url 'AddCyberMessages' %}">Add Bullying Msgs/Words</a></li>
+	  <li><a href="{% url 'RunAlgorithms' %}">Run Algorithms</a></li>
+      <li><a href="{% url 'index' %}">Logout</a></li>
+   </ul>			<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.JPG' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+<form name="f1" method="post" action="{% url 'RunAlgorithm' %}" onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Run Algorithms Screen</b></h2>
+
+   <center><font face="verdana" color="red">{{ data|safe }}</font></center>
+   
+					
+						<table align="center" width="40" >
+			
+		  <tr><td><b>Status</b></td><td><select name="t1">
+		  <option value="SVM Algorithm">SVM Algorithm</option>
+		  <option value="Naive Bayes">Naive Bayes</option>
+		  <option value="Random Forest">Random Forest</option>
+		  <option value="Decision Tree">Decision Tree</option>
+		  <option value="KNearest Neighbors">KNearest Neighbors</option>
+		  
+		  </select>
+		  </td></tr>
+
+		 
+		
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+	</body>
+</html>
